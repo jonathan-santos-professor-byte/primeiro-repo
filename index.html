@@ -244,14 +244,14 @@
 
       <nav class="actions" aria-label="Ações do site">
         <a class="btn" href="#atividade">Atividade</a>
-        <a class="btn" href="#instrucoes">Instruções</a>
+        <a class="btn" href="#alunos">Alunos</a>
         <a class="btn primary" href="https://github.com" target="_blank" rel="noopener">Ver no GitHub</a>
       </nav>
     </header>
 
     <section class="hero">
       <div class="card intro">
-        <h2>Apresente o fluxo: editar → commit → push → deploy</h2>
+        <h2>Fluxo: Editar → commit → push → deploy</h2>
         <p>Esta página é um exemplo simples, mas elegante, para usar na atividade em sala. Os alunos podem clonar, editar o conteúdo (por exemplo o texto deste parágrafo), commitar e observar as mudanças publicadas automaticamente no GitHub Pages.</p>
 
         <div class="features" aria-hidden="false">
@@ -260,11 +260,11 @@
             <div class="desc">Salvar ponto no histórico com mensagem descritiva.</div>
           </div>
           <div class="feature">
-            <div class="title">Branch</div>
-            <div class="desc">Isolar mudanças para criar Pull Requests.</div>
+            <div class="title">Actions</div>
+            <div class="desc">Configurar deploy para disponitilizar o site</div>
           </div>
           <div class="feature">
-            <div class="title">Pull Request</div>
+            <div class="title">Aluno 2: Clonar e Pull Request</div>
             <div class="desc">Revisão e integração segura no main.</div>
           </div>
         </div>
@@ -281,8 +281,8 @@
           </div>
 
           <div class="content">
-            <h3>Bem-vindo(a) — altere este texto e veja o deploy</h3>
-            <p>Mude este parágrafo localmente e faça um <code>git push</code>. O workflow configurado publicará as alterações automaticamente no GitHub Pages.</p>
+            <h3>Bem-vindo(a) — Aluno TECINFO</h3>
+            <p>O workflow configurado publicará as alterações automaticamente no GitHub Pages.</p>
             <div style="display:flex;gap:8px;align-items:center">
               <a class="btn" href="#atividade">Instruções</a>
               <button class="btn primary" onclick="copyDemo()">Copiar instruções</button>
@@ -295,15 +295,6 @@
           <div class="code-sample">
             git clone https://github.com/SEU_USUARIO/aula-github-seu-nome.git
             <br><br>
-            cd aula-github-seu-nome
-            <br>
-            echo "Texto alterado" &gt; index.html
-            <br>
-            git add index.html
-            <br>
-            git commit -m "Atualiza conteúdo do site"
-            <br>
-            git push
           </div>
         </div>
       </aside>
@@ -311,45 +302,34 @@
 
     <section class="grid" id="atividade">
       <div class="card" aria-labelledby="ativ-title">
-        <h3 id="ativ-title">Atividade sugerida (em sala)</h3>
-        <small>Tempo sugerido: 40–60 minutos</small>
+        <h3 id="ativ-title">Atividade:</h3>
         <ol style="margin:12px 0 0;padding-left:18px;color:var(--muted);line-height:1.6">
           <li>Clonar o repositório do professor.</li>
-          <li>Criar uma nova branch: <code>git checkout -b seu-nome</code>.</li>
-          <li>Editar o arquivo <code>index.html</code> (por exemplo, altere o título ou parágrafo de boas-vindas).</li>
+          <li>Editar o arquivo <code>index.html</code></li>
           <li>Fazer commit e push da sua branch.</li>
-          <li>Abrir Pull Request no GitHub e adicionar uma descrição curta.</li>
-          <li>Fazer o merge (ou pedir revisão) e observar o deploy automático no Pages.</li>
+          <li>Ativar Github Actions</li>
+          <li>Visualizar o site publicado.</li>
+          <li>O colega da atividade deve fazer um pull request no seu repositório adicionando o nome dele</li>
         </ol>
       </div>
 
-      <div class="card" id="instrucoes">
-        <h3>Instruções rápidas para professor</h3>
-        <small>Pontos de verificação</small>
+      <div class="card" id="alunos">
+        <h3>Alunos Envolvidos</h3>
+        <small>Insira seu nome na lista abaixo</small>
         <ul style="margin:12px 0 0;padding-left:18px;color:var(--muted);line-height:1.6">
-          <li>Ativar GitHub Pages no repositório (Settings → Pages) apontando para a branch <code>main</code> (ou deixe o workflow configurar).</li>
-          <li>Confirmar que o workflow de Actions existe em <code>.github/workflows</code>.</li>
-          <li>Mostrar na tela: editar localmente, commit, push, abrir PR e merge.</li>
-          <li>Explicar logs do Actions caso algo falhe (aba Actions → selecionar workflow → ver passos).</li>
+          <li>Seu nome...</li>
         </ul>
       </div>
     </section>
 
-    <footer>
-      <div>Licença: exemplo livre para aula • &copy; Demo</div>
-      <div style="color:var(--muted)">Dica: personalize o arquivo e peça aos alunos para mudarem só uma frase primeiro.</div>
-    </footer>
   </div>
 
   <script>
     function copyDemo(){
       const text = `git clone https://github.com/SEU_USUARIO/aula-github-seu-nome.git
-cd aula-github-seu-nome
-git checkout -b seu-nome
-# editar index.html
+
 git add index.html
-git commit -m "Meu ajuste na página"
-git push --set-upstream origin seu-nome`;
+git commit -m "Meu ajuste na página"`;
       navigator.clipboard?.writeText(text).then(()=> {
         alert('Comandos copiados para a área de transferência!');
       }).catch(()=> {
